@@ -30,15 +30,15 @@ body {
     grid-area: footer;
 }
 
-header, nav, footer, main, div {
+header, nav, footer, main, div, form {
     background: #e5e5e5;
     border: 1px solid black;
 }
 
-#parametrs {
+/* #parametrs {
     height: 10%;
-}
+} */
 
-#solution, #graphic, #theory {
+/* #solution, #graphic, #theory {
     height: 30%;
-}
+} */
