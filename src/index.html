@@ -6,20 +6,18 @@
         </title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/main.css" type="text/css">
-        <!-- <style>
-            
-        </style> -->
     </head>
     <body>
-       <header id = "header"> Сайт по решению квадратных уравнений и построению графиков</header>
+       <header id = "header"> Сайт-калькулятор по решению квадратных уравнений</header>
        <nav id = "nav"> 
-            <a href="index.html" id = "link1">Установить параметры уравнения</a>
-            <a href="index.html" id = "link2">Решить уравнение</a>
-            <a href="index.html" id = "link3">Построить график</a>
-            <a href="index.html" id = "link4">Теория</a>
+            <a href="#parametrs" id = "link1">Параметры уравнения</a>
+            <a href="#solution" id = "link2">Текст решения</a>
+            <a href="#graphic" id = "link3">Построение графика</a>
+            <a href="#theory" id = "link4">Теоретическая часть</a>
        </nav>
        <main id = "main">
-            <form action="#" method="post" id = "parametrs">
+            <div id="parametrs" name="parametrs">            
+                <form action="#" method="post" id="parametrs_form" name="parametrs_form">
                     <label for="a">a = </label>
                     <input type="number" name="a" id="a" placeholder="0"><br>
 
@@ -27,17 +25,19 @@
                     <input type="number" name="b" id="b" placeholder="0"><br>
 
                     <label for="c">c = </label>
-                    <input type="number" name="c" id="c" placeholder="0"> 
-                    <button type="submit" name="sub_button" id="sub_button">Отправить</button><br>
-                
-            </form>
-            <div id = "solution">
+                    <input type="number" name="c" id="c" placeholder="0">
+                    <button type="submit" name="sub_button" id="sub_button">Отправить</button><br>                
+                </form>
+
+            </div>
+
+            <div id="solution" name="solution">
                 Блок текста решения
             </div>
-            <div id = "graphic">
+            <div id="graphic" name="graphic">
                 Блок вывода графика
             </div>
-            <div id = "theory">
+            <div id="theory" name="theory">
                 Блок вывода теории
             </div>
        </main>
