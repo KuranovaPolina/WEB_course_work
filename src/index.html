@@ -6,6 +6,10 @@
         </title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../css/main.css" type="text/css">
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script src="../js/main.js"></script>
     </head>
     <body>
        <header id = "header"> Сайт-калькулятор по решению квадратных уравнений</header>
@@ -16,31 +20,54 @@
             <a href="#theory" id = "link4">Теоретическая часть</a>
        </nav>
        <main id = "main">
-            <div id="parametrs" name="parametrs">            
+            <div id="parametrs" name="parametrs">     
+                <div class="roll" id="roll1">-</div>       
                 <form action="#" method="post" id="parametrs_form" name="parametrs_form">
-                    <label for="a">a = </label>
-                    <input type="number" name="a" id="a" placeholder="0"><br>
-
-                    <label for="b">b = </label>
-                    <input type="number" name="b" id="b" placeholder="0"><br>
-
-                    <label for="c">c = </label>
-                    <input type="number" name="c" id="c" placeholder="0">
-                    <button type="submit" name="sub_button" id="sub_button">Отправить</button><br>                
+                    <div id="formula">
+                        <input type="number" name="a" id="a" placeholder="0">
+                        * x<sup>2</sup> +
+                        <input type="number" name="b" id="b" placeholder="0">
+                        * x +
+                        <input type="number" name="c" id="c" placeholder="0">
+                        = 0 
+                    </div>
+                    <button type="solve" name="solve_button" id="solve_button">Отправить</button>               
                 </form>
-
             </div>
 
             <div id="solution" name="solution">
-                Блок текста решения
+                <div class="roll" id="roll2">-</div>
+                <p> Решение уравнения  \(0 * x^2 + 0 * x + 0 = 0\)<br>
+                    \(a = 0\) следовательно уравнение не квадратное.<br>
+                    Корень: $${x} = {-c \over b} = {-0 \over 0},$$ делить на 0 нельзя, следовательно значение неопределено.</p>
             </div>
             <div id="graphic" name="graphic">
-                Блок вывода графика
+                <div class="roll" id="roll2">-</div>
+                <div id="chart_div"> 
+                    <div><canvas id="chart"></canvas></div> 
+                    <div> <button type="solve" name="download_button" id="download_button">Сохранить</button></div> 
+                </div>
+                  
             </div>
             <div id="theory" name="theory">
-                Блок вывода теории
+                <div class="roll" id="roll4">-</div>
+                <p> Квадратное уравнение — это уравнение вида \(ax^2 + bx + c = 0\), где a, b и с — некоторые коэффициенты, причём \(a \ne 0\). <br>
+                    Уравнение в которам a = 0 называется линейным и имеет вид bx + c = 0.<br><br>
+                    
+                    Решить квадратное уравнение, значит найти его корни. Это можно сделать с помощью дискримината. <br>
+                    Дискриминат вычисляется по формуле \(D = b^2 - 4ac\). <br><br>
+
+                    Дискриминат может принять 3 вида значений:<br>
+                    \(D > 0\), в таком случае уравнение имеет 2 вещественных корня, вычисляемые по формуле: $${x}_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<br>
+                    \(D = 0\), в таком случае корень 1: $${x} = {-b \over 2a}.$$<br>
+                    \(D &lt; 0\), в таком случае вещественных корней у квадратного уравнения нет.<br> <br>
+                    
+                    Корень линейного уравнения высчитывается по формуле: $${x} = {-c \over b}.$$ </p>
             </div>
        </main>
-       <footer id = "footer">Данный сайт является выполнением курсовой работы по WEB-технлогиям...</footer>
+       <footer id = "footer">
+        <div>Данный сайт является выполнением курсовой работы по WEB-технологиям...</div>
+        <div id="up">Наверх</div>
+        </footer>
     </body>
 </html>

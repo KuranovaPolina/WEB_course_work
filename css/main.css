@@ -1,6 +1,4 @@
 body {
-    /* background-color: black; */
-    /* min-width: 100vw; */
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 6fr;
@@ -20,9 +18,7 @@ body {
 
     font-family: 'Inter';
     font-style: normal;
-    /* font-weight: 700; */
     font-size: 30px;
-    /* line-height: 40px; */
     text-align: center;
 
     vertical-align: middle;
@@ -35,7 +31,6 @@ body {
     grid-area: nav;
     display: flex;
     flex-direction: column;
-    /* justify-content: baseline; */
 
     background: #A9B1F7;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -67,12 +62,9 @@ a:hover {
     flex-direction: column;
 
     height: 100%;
-
-    /* justify-content: normal; */
 }
 
 #main > * {
-    /* height: auto; */
     background: #DFE9FC;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
@@ -88,34 +80,19 @@ a:hover {
 
     font-family: 'Inter';
     font-style: normal;
-    /* font-weight: 400; */
     font-size: 20px;
-    /* line-height: 27px; */
     text-align: center;
 
     color: #FFFFFF;
 }
 
-#parametrs {
-    height: 16%;
+#parametrs, #solution, #graphic, #theory { 
     padding: 10px;
-    /* vertical-align: middle; */
-    /* max-height: 100px; */
-}
-
-#solution, #graphic, #theory {
-    height: 28%;
 }
 
 form {
     height: 100%;
-    /* border: #000000 1px solid; */
-    /* padding: 10px; */
 }
-
-/* form > * {
-    height: 20%;
-} */
 
 form > label {
     width: 50px;
@@ -130,9 +107,7 @@ button {
 
     font-family: 'Inter';
     font-style: normal;
-    /* font-weight: 700; */
     font-size: 10px;
-    /* line-height: 24px; */
     text-align: center;
 
     color: #FFFFFF;
@@ -155,15 +130,6 @@ button {
         align-items: center;
         justify-content:space-around;
     }
-/* 
-    #parametrs {
-        height: 10vh;
-        padding: 10px;
-    }
-    
-    #solution, #graphic, #theory {
-        height: 30vh;
-    } */
 }
 
 @media all and (max-width: 699px){
@@ -183,12 +149,32 @@ button {
         align-items: center;
         justify-content:space-around;
     }
-    /* #parametrs {
-        height: 10vh;
-        padding: 10px;
-    }
-    
-    #solution, #graphic, #theory {
-        height: 30vh;
-    } */
+}
+
+#formula, #solve_button {
+    margin: 5px;
+}
+
+#parametrs_form, #chart_div {
+    text-align: center;
+}
+
+#roll1, #roll2, #roll3, #roll4, #up {
+    text-align: right;
+    padding: 1px 30px 1px 1px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 15px;
+
+    color: black;    
+}
+
+#chart {
+    border: #3240BB 1px solid;
+}
+
+img {
+    width: 40px;
+    height: auto;
 }
