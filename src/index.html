@@ -11,7 +11,7 @@
 
         <script src="../js/main.js"></script>
     </head>
-    <body>
+    <body onload="start()">
        <header id = "header"> Сайт-калькулятор по решению квадратных уравнений</header>
        <nav id = "nav"> 
             <a href="#parametrs" id = "link1">Параметры уравнения</a>
@@ -21,7 +21,8 @@
        </nav>
        <main id = "main">
             <div id="parametrs" name="parametrs">     
-                <div class="roll" id="roll1">-</div>       
+                <div class="roll" id="roll1" onclick="roll('parametrs_form', 'roll1')">-</div> 
+                <div id="parametrs_form_h">Параметры</div>      
                 <form action="#" method="post" id="parametrs_form" name="parametrs_form">
                     <div id="formula">
                         <input type="number" name="a" id="a" placeholder="0">
@@ -36,13 +37,15 @@
             </div>
 
             <div id="solution" name="solution">
-                <div class="roll" id="roll2">-</div>
-                <p> Решение уравнения  \(0 * x^2 + 0 * x + 0 = 0\)<br>
+                <div class="roll" id="roll2" onclick="roll('solution_text', 'roll2')">-</div>
+                <div id="solution_text_h">Решение</div>
+                <p id="solution_text"> Решение уравнения  \(0 * x^2 + 0 * x + 0 = 0\)<br>
                     \(a = 0\) следовательно уравнение не квадратное.<br>
                     Корень: $${x} = {-c \over b} = {-0 \over 0},$$ делить на 0 нельзя, следовательно значение неопределено.</p>
             </div>
             <div id="graphic" name="graphic">
-                <div class="roll" id="roll2">-</div>
+                <div class="roll" id="roll3" onclick="roll('chart_div', 'roll3')">-</div>
+                <div id="chart_div_h">График</div>
                 <div id="chart_div"> 
                     <div><canvas id="chart"></canvas></div> 
                     <div> <button type="solve" name="download_button" id="download_button">Сохранить</button></div> 
@@ -50,8 +53,9 @@
                   
             </div>
             <div id="theory" name="theory">
-                <div class="roll" id="roll4">-</div>
-                <p> Квадратное уравнение — это уравнение вида \(ax^2 + bx + c = 0\), где a, b и с — некоторые коэффициенты, причём \(a \ne 0\). <br>
+                <div class="roll" id="roll4" onclick="roll('theory_text', 'roll4')">-</div>
+                <div id="theory_text_h">Теория</div>
+                <p id="theory_text"> Квадратное уравнение — это уравнение вида \(ax^2 + bx + c = 0\), где a, b и с — некоторые коэффициенты, причём \(a \ne 0\). <br>
                     Уравнение в которам a = 0 называется линейным и имеет вид bx + c = 0.<br><br>
                     
                     Решить квадратное уравнение, значит найти его корни. Это можно сделать с помощью дискримината. <br>
