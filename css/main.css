@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 6fr;
-    grid-template-rows: 1fr 12fr 1fr;
+    grid-template-rows: 1fr auto 1fr;
     grid-template-areas: 
     "header header"
     "nav main"
@@ -58,8 +58,7 @@ a:hover {
 
 #main {
     grid-area: main;
-    display: flex;
-    flex-direction: column;
+    /* display: grid; */
 
     height: 100%;
 }
@@ -89,6 +88,22 @@ a:hover {
 #parametrs, #solution, #graphic, #theory { 
     padding: 10px;
 }
+#parametrs { 
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+#solution{ 
+    grid-row-start: 2;
+    grid-column-start: 1;
+}
+#graphic{ 
+    grid-row-start: 3;
+    grid-column-start: 1;
+}
+#theory { 
+    grid-row-start: 4;
+    grid-column-start: 1;
+}
 
 form {
     height: 100%;
@@ -117,7 +132,7 @@ button {
     body {
         display: grid;
         grid-template-columns: 6fr;
-        grid-template-rows: 1fr 1fr 12fr 1fr;
+        grid-template-rows: 1fr 1fr auto 1fr;
         grid-template-areas: 
         "header"
         "nav"
@@ -136,7 +151,7 @@ button {
     body {
         display: grid;
         grid-template-columns: 6fr;
-        grid-template-rows: 1fr 2fr 11fr 1fr;
+        grid-template-rows: 1fr 2fr auto 1fr;
         grid-template-areas: 
         "header"
         "nav"
