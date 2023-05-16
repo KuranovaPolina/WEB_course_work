@@ -20,3 +20,7 @@ function roll(id, button_id) {
         button.textContent = '-';
     }
 }
+
+function solve() {
+    alert(+document.getElementById("a").value + " * x^2 + " + +document.getElementById("b").value + " * x + " + +document.getElementById("c").value + " = 0" )
+}

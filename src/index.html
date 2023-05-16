@@ -23,17 +23,17 @@
             <div id="parametrs" name="parametrs">     
                 <div class="roll" id="roll1" onclick="roll('parametrs_form', 'roll1')">-</div> 
                 <div id="parametrs_form_h">Параметры</div>      
-                <form action="#" method="post" id="parametrs_form" name="parametrs_form">
+                <div id="parametrs_form" name="parametrs_form">
                     <div id="formula">
-                        <input type="number" name="a" id="a" placeholder="0">
+                        <input type="number" name="a" id="a" placeholder="0" step="0.01" value="0">
                         * x<sup>2</sup> +
-                        <input type="number" name="b" id="b" placeholder="0">
+                        <input type="number" name="b" id="b" placeholder="0" step="0.01" value="0">
                         * x +
-                        <input type="number" name="c" id="c" placeholder="0">
+                        <input type="number" name="c" id="c" placeholder="0" step="0.01" value="0">
                         = 0 
                     </div>
-                    <button type="solve" name="solve_button" id="solve_button">Отправить</button>               
-                </form>
+                    <button type="button" name="solve_button" id="solve_button" onclick="solve()">Решить</button>               
+                </div>
             </div>
 
             <div id="solution" name="solution">
@@ -48,7 +48,7 @@
                 <div id="chart_div_h">График</div>
                 <div id="chart_div"> 
                     <div><canvas id="chart"></canvas></div> 
-                    <div> <button type="solve" name="download_button" id="download_button">Сохранить</button></div> 
+                    <div> <button type="button" name="download_button" id="download_button">Сохранить</button></div> 
                 </div>
                   
             </div>
