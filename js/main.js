@@ -19,6 +19,18 @@ function roll(id, button_id) {
 
 }
 
+// function write_solve() {
+//     let solution_box = document.getElementById("solution_text");
+//     solution_box.textContent = 'solution';
+// }
+
+// function draw_solve() {
+//     let draw_box = document.getElementById("chart");
+//     alert("graphic");
+// }
+
 function solve() {
-    alert(+document.getElementById("a").value + " * x^2 + " + +document.getElementById("b").value + " * x + " + +document.getElementById("c").value + " = 0" )
+    alert(+document.getElementById("a").value + " * x^2 + " + +document.getElementById("b").value + " * x + " + +document.getElementById("c").value + " = 0" );
+    // write_solve();
+    // draw_solve();
 }
