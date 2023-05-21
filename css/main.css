@@ -1,0 +1,199 @@
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer";
+}
+
+#header {
+    grid-area: header;    
+
+    background: #3240BB;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 30px;
+    text-align: center;
+
+    vertical-align: middle;
+    
+
+    color: #FFFFFF;
+}
+
+#nav {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+
+    background: #A9B1F7;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+
+    height: 100%;
+}
+
+a {
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 15px;
+    text-align: center;
+
+    color: #000000;
+
+    margin: 5px;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+#main {
+    grid-area: main;
+    /* display: grid; */
+
+    height: 100%;
+}
+
+#main > * {
+    background: #DFE9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+
+}
+
+#footer {
+    grid-area: footer;
+
+    background: #3240BB;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+#parametrs, #solution, #graphic, #theory { 
+    padding: 10px;
+}
+#parametrs { 
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+#solution{ 
+    grid-row-start: 2;
+    grid-column-start: 1;
+}
+#graphic{ 
+    grid-row-start: 3;
+    grid-column-start: 1;
+}
+#theory { 
+    grid-row-start: 4;
+    grid-column-start: 1;
+}
+
+form {
+    height: 100%;
+}
+
+form > label {
+    width: 50px;
+    display: inline-block;
+}
+
+button {
+    background: #3240BB;
+    border-radius: 10px;
+    width: 70px;
+    height: 20px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 10px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+@media all and (max-width: 1100px) and (min-width: 700px){
+    body {
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 6fr;
+        grid-template-rows: 1fr 1fr auto 1fr;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    }
+
+    #nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content:space-around;
+    }
+}
+
+@media all and (max-width: 699px){
+    body {
+        display: grid;
+        grid-template-columns: 6fr;
+        grid-template-rows: 1fr 2fr auto 1fr;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "main"
+        "footer";
+    }
+
+    #nav {
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-around;
+    }
+}
+
+#formula, #solve_button {
+    margin: 5px;
+}
+
+#parametrs_form, #chart_div {
+    text-align: center;
+}
+
+#roll1, #roll2, #roll3, #roll4, #up {
+    text-align: right;
+    padding: 1px 30px 1px 1px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 15px;
+
+    color: black;    
+}
+
+#chart {
+    border: #3240BB 1px solid;
+    background-color: #FFFFFF;
+    max-width: 90vw;
+    height: auto;
+}
+
+img {
+    width: 40px;
+    height: auto;
+}

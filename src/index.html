@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>
+            Решение квадратных уравнений
+        </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/main.css" type="text/css">
+
+        <!-- MathJax.js -->
+        <script src="../lib/node_modules/mathjax/es5/tex-chtml.js"></script>
+
+        <!-- jquery.js -->
+        <script src="../lib/node_modules/jquery/dist/jquery.js"></script>
+
+        <!-- chart.js -->
+        <script src="../lib/node_modules/chart.js/dist/chart.umd.js"></script>
+
+        <script src="../js/main.js"></script>
+    </head>
+    <body onload="start()">
+
+       <header id = "header"> Сайт-калькулятор по решению квадратных уравнений</header>
+       <nav id = "nav"> 
+            <a href="#parametrs" id = "link1">Параметры уравнения</a>
+            <a href="#solution" id = "link2">Текст решения</a>
+            <a href="#graphic" id = "link3">Построение графика</a>
+            <a href="#theory" id = "link4">Теоретическая часть</a>
+       </nav>
+       <main id = "main">
+            <div id="parametrs">     
+                <div class="roll" id="roll1" onclick="roll('parametrs_form', 'roll1')">-</div> 
+                <div id="parametrs_form_h">Параметры</div>      
+                <div id="parametrs_form">
+                    <div id="formula">
+                        <input type="number" name="a" id="a" placeholder="0" step="0.01" value="0">
+                        * x<sup>2</sup> +
+                        <input type="number" name="b" id="b" placeholder="0" step="0.01" value="0">
+                        * x +
+                        <input type="number" name="c" id="c" placeholder="0" step="0.01" value="0">
+                        = 0 
+                    </div>
+                    <button type="button" name="solve_button" id="solve_button" onclick="solve()">Решить</button>               
+                </div>
+            </div>
+
+            <div id="solution">
+                <div class="roll" id="roll2" onclick="roll('solution_text', 'roll2')">-</div>
+                <div id="solution_text_h">Решение</div>
+                <div id="solution_text">                
+                    <p id="equation">Решение уравнения <span id="equation_line">0x<sup>2</sup> + 0x + 0 = 0.</span></p> 
+                    <p id="eq_info">a = 0 следовательно уравнение не квадратное, а линейное.</p>
+                    <p id="middle_info">b = 0, оно в знаменателе. На 0 делить нельзя.</p>
+                    <p id="res">с = 0. Уравнение имеет бесконечное количество вещественных корней.</p>
+                                       
+                </div>
+            </div>
+            <div id="graphic">
+                <div class="roll" id="roll3" onclick="roll('chart_div', 'roll3')">-</div>
+                <div id="chart_div_h">График</div>
+                <div id="chart_div"> 
+                    <div><canvas id="chart"></canvas></div> 
+                    <div> <button type="button" name="download_button" id="download_button" onclick="download()">Сохранить</button></div> 
+                </div>
+                  
+            </div>
+            <div id="theory">
+                <div class="roll" id="roll4" onclick="roll('theory_text', 'roll4')">-</div>
+                <div id="theory_text_h">Теория</div>
+                <p id="theory_text"> Квадратное уравнение — это уравнение вида \(ax^2 + bx + c = 0\), где a, b и с — некоторые коэффициенты, причём \(a \ne 0\). <br>
+                    Уравнение в которам \(a = 0\) называется линейным и имеет вид \(bx + c = 0\).<br><br>
+                    
+                    Решить квадратное уравнение, значит найти его корни. Это можно сделать с помощью дискримината. <br>
+                    Дискриминат вычисляется по формуле: $$D = b^2 - 4ac.$$ <br>
+
+                    Дискриминат может принять 3 вида значений:<br>
+                    \(D > 0\), в таком случае уравнение имеет 2 вещественных корня, вычисляемые по формуле: $${x}_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<br>
+                    \(D = 0\), в таком случае корень 1: $${x} = {-b \over 2a}.$$<br>
+                    \(D &lt; 0\), в таком случае вещественных корней у квадратного уравнения нет.<br> <br>
+                    
+                    Корень линейного уравнения высчитывается по формуле: $${x} = {-c \over b}.$$ </p>
+            </div>
+       </main>
+       <footer id = "footer">
+        <div>Данный сайт является выполнением курсовой работы по WEB-технологиям...</div>
+        <div id="up"><a href="#header">Наверх</a></div>
+        </footer>
+    </body>
+</html>
