@@ -1,0 +1,41 @@
+#header { 
+    background: #3240BB;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    color: #FFFFFF;
+}
+
+#nav {
+    background: #A9B1F7;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    height: 100%;
+}
+
+#main > * {
+    background: #DFE9FC;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+#footer {
+    background: #3240BB;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    color: #FFFFFF;
+}
+
+button {
+    background: #3240BB;
+    border-radius: 10px;
+    color: #FFFFFF;
+}
+
+#roll1, #roll2, #roll3, #roll4, #up {
+    color: black;    
+}
+
+#chart {
+    border: #3240BB 1px solid;
+    background-color: #FFFFFF;
+}

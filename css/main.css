@@ -1,4 +1,7 @@
 body {
+    font-family: 'Inter';
+    font-style: normal;
+
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 6fr;
@@ -16,9 +19,6 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
 
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 30px;
     text-align: center;
 
     vertical-align: middle;
@@ -40,8 +40,6 @@ body {
 }
 
 a {
-    font-family: 'Inter';
-    font-style: normal;
     font-size: 15px;
     text-align: center;
 
@@ -77,8 +75,6 @@ a:hover {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-size: 20px;
     text-align: center;
 
@@ -87,22 +83,6 @@ a:hover {
 
 #parametrs, #solution, #graphic, #theory { 
     padding: 10px;
-}
-#parametrs { 
-    grid-row-start: 1;
-    grid-column-start: 1;
-}
-#solution{ 
-    grid-row-start: 2;
-    grid-column-start: 1;
-}
-#graphic{ 
-    grid-row-start: 3;
-    grid-column-start: 1;
-}
-#theory { 
-    grid-row-start: 4;
-    grid-column-start: 1;
 }
 
 form {
@@ -120,8 +100,6 @@ button {
     width: 70px;
     height: 20px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-size: 10px;
     text-align: center;
 
@@ -179,8 +157,6 @@ button {
     text-align: right;
     padding: 1px 30px 1px 1px;
 
-    font-family: 'Inter';
-    font-style: normal;
     font-size: 15px;
 
     color: black;    
@@ -192,8 +168,6 @@ button {
     max-width: 90vw;
     height: auto;
 }
-
-img {
-    width: 40px;
-    height: auto;
-}
+ h1 {
+    font-size: 30px;
+ }

@@ -30,9 +30,9 @@ function write_solve() {
         if (d < 0) {
             $("#res").html("D &lt 0. Уравнение не имеет вещественных корней.");
         } else if (d == 0) {
-            $("#res").html("Уравнение не имеет один вещественный корень: <br> x = " + (-b / 2 * a) + ".");
+            $("#res").html("Уравнение имеет один вещественный корень: <br> x = " + (-b / 2 * a) + ".");
         } else {
-            $("#res").html("Уравнение не имеет два вещественных корня: <br> x<sub>1</sub> = " + ((-b - Math.sqrt(d)) / 2 * a) + "<br> x<sub>2</sub> = " + ((-b + Math.sqrt(d)) / 2 * a) + ".");
+            $("#res").html("Уравнение имеет два вещественных корня: <br> x<sub>1</sub> = " + ((-b - Math.sqrt(d)) / 2 * a) + "<br> x<sub>2</sub> = " + ((-b + Math.sqrt(d)) / 2 * a) + ".");
         }
     }
 
@@ -58,6 +58,12 @@ function draw_solve() {
         },
         options: {
             responsive: true,
+            //   scales: {
+            //     y: { // defining min and max so hiding the dataset does not change scale range
+            //       min: 0,
+            //       max: 100
+            //     }
+            //   }
         }
       });
 
@@ -68,7 +74,7 @@ function draw_solve() {
         return a * x * x + b * x + c;
     }
 
-    for (var x = -20; x <= 20; x += 1) {
+    for (var x = -5; x <= 5; x += 1) {
         chart.data.labels.push('' + x);
         chart.data.datasets[0].data.push(f(x));
     }
@@ -76,18 +82,16 @@ function draw_solve() {
     chart.update();
 }
 
+
 function roll(id, button_id) {
     let button = document.getElementById(button_id);
 
+    $("#" + id + "_h").slideToggle();
+    $("#" + id).slideToggle();
+
     if (button.textContent == '-') {
-        $("#" + id + "_h").show();
-        $("#" + id).hide();
         button.textContent = '+';
-
-
     } else {
-        $("#" + id + "_h").hide();
-        $("#" + id).show();
         button.textContent = '-';        
 
         if (id == "chart_div") {
@@ -102,12 +106,6 @@ function start() {
     $("#chart_div_h").hide();
     $("#theory_text_h").hide();
 
-    $("#square_eq").hide();
-    $("#c_info_1").hide();
-    $("#d_1").hide();
-    $("#d_0").hide();
-    $("#d_2").hide();
-
     draw_solve();
 }
 
@@ -119,6 +117,6 @@ function solve() {
 function download() {
     let link = document.createElement('a');
     link.href = chart.toBase64Image();
-    link.download = 'graphic.jpeg';
+    link.download = 'graphic.png';
     link.click();
 }
