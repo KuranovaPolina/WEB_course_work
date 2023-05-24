@@ -203,8 +203,6 @@ function get_quadratic_x(a, b, D) {
     return x_line;
 }
 
-
-
 function solution_text(a, b, c) {
     let equation = get_equation(a, b, c);
     let res_line = "Решаемое уравнение (ax<sup>2</sup>+bx+c=0): " + equation + ".<br>";
