@@ -56,7 +56,6 @@ a:hover {
 
 #main {
     grid-area: main;
-    /* display: grid; */
 
     height: 100%;
 }
@@ -98,10 +97,10 @@ button {
     background: #3240BB;
     border-radius: 10px;
     width: 70px;
-    height: 20px;
+    height: 40px;
 
     font-size: 10px;
-    text-align: center;
+    /* text-align: center; */
 
     color: #FFFFFF;
 }
@@ -145,11 +144,11 @@ button {
     }
 }
 
-#formula, #solve_button {
+.formula, #solve_button, #download_button, #graphic_settings {
     margin: 5px;
 }
 
-#parametrs_form, #chart_div {
+#parametrs_form, #graphic_settings {
     text-align: center;
 }
 
@@ -167,7 +166,23 @@ button {
     background-color: #FFFFFF;
     max-width: 90vw;
     height: auto;
+    text-align: center;
 }
- h1 {
+
+h1 {
     font-size: 30px;
- }
+}
+
+#graphic_button_group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+math {
+    font-size: large;
+}
+
+#solution_text div {
+    text-align: center;
+}
