@@ -111,6 +111,93 @@ function get_quadratic_x(a, b, D) {
             "</mfrac>" +
             "<mo>=</mo>" + "<mn>" + (-b / (2 * a)) + "</mn>" +
         "</math>";
+    } else {
+        x_line = "<math xmlns='http://www.w3.org/1998/Math/MathML'>" +
+            "<msub>" +
+                "<mi>x</mi>" +
+                "<mrow>" +
+                    "<mn>1</mn>"+
+                    "<mo>,</mo>"+
+                    "<mn>2</mn>"+
+                "</mrow>" +
+            "</msub>"+
+            "<mo>=</mo>" +
+            "<mfrac>"+
+                "<mrow>" +
+                    "<mo>-</mo>" +
+                    "<mi>b</mi> " +
+                    "<mo>&#xB1;</mo>" +
+                    "<msqrt>" +
+                        "<mi>D</mi>" +
+                    "</msqrt>" +
+                "</mrow>" +
+                "<mrow>" +
+                    "<mn>2</mn>" +
+                    "<mi>a</mi> " +
+                "</mrow>" +
+            "</mfrac>" +
+            "<mo>=</mo>" +
+            "<mfrac>"+
+                "<mrow>" +
+                    "<mi>"+ -1 * b +"</mi>" +
+                    "<mo>&#xB1;</mo>" +
+                    "<msqrt>" +
+                        "<mi>"+ D + "</mi>" +
+                    "</msqrt>" +
+                "</mrow>" +
+                "<mrow>" +
+                    "<mn>2</mn>" +
+                    "<mo>*</mo>" +
+                    "<mi>"+ a +"</mi>" +
+                "</mrow>" +
+            "</mfrac>" +
+        "</math>,<br>";
+
+        x_line = x_line + "<math xmlns='http://www.w3.org/1998/Math/MathML'>" +
+            "<msub>" +
+                "<mi>x</mi>" +
+                "<mn>1</mn>" +
+            "</msub>"+
+            "<mo>=</mo>" +
+            "<mfrac>"+
+                "<mrow>" +
+                    "<mi>"+ -1 * b +"</mi>" +
+                    "<mo>-</mo>" +
+                    "<msqrt>" +
+                        "<mi>"+ D + "</mi>" +
+                    "</msqrt>" +
+                "</mrow>" +
+                "<mrow>" +
+                    "<mn>2</mn>" +
+                    "<mo>*</mo>" +
+                    "<mi>"+ a +"</mi>" +
+                "</mrow>" +
+            "</mfrac>" +
+            "<mo>=</mo>" + "<mn>" + ((-b - Math.sqrt(D)) / (2 * a)) + "</mn>" +
+        "</math>,<br>";
+
+        x_line = x_line + "<math xmlns='http://www.w3.org/1998/Math/MathML'>" +
+            "<msub>" +
+                "<mi>x</mi>" +
+                "<mn>2</mn>" +
+            "</msub>"+
+            "<mo>=</mo>" +
+            "<mfrac>"+
+                "<mrow>" +
+                    "<mi>"+ -1 * b +"</mi>" +
+                    "<mo>+</mo>" +
+                    "<msqrt>" +
+                        "<mi>"+ D + "</mi>" +
+                    "</msqrt>" +
+                "</mrow>" +
+                "<mrow>" +
+                    "<mn>2</mn>" +
+                    "<mo>*</mo>" +
+                    "<mi>"+ a +"</mi>" +
+                "</mrow>" +
+            "</mfrac>" +
+            "<mo>=</mo>" + "<mn>" + ((-b + Math.sqrt(D)) / (2 * a)) + "</mn>" +
+        "</math>";
     }
 
     return x_line;
@@ -153,7 +240,10 @@ function solution_text(a, b, c) {
                 "следовательно уравнение не имеет вещественных корней. <br>";
         } else if (D == 0) {
             res_line = res_line + "<math xmlns='http://www.w3.org/1998/Math/MathML'><mi>D</mi> <mo>=</mo> <mn>0</mn> </math>, " +
-                "следовательно уравнение имеет один вещественный корень. <br><div>" + get_quadratic_x(a, b, D) +"</div>";
+                "следовательно уравнение имеет один вещественный корень. <br><div>" + get_quadratic_x(a, b, D) +".</div>";
+        } else {
+            res_line = res_line + "<math xmlns='http://www.w3.org/1998/Math/MathML'><mi>D</mi> <mo>></mo> <mn>0</mn> </math>, " +
+                "следовательно уравнение имеет два вещественых корня. <br><div>" + get_quadratic_x(a, b, D) +".</div>";
         }
     }
 
@@ -165,9 +255,17 @@ function write_solve() {
     let b = +document.getElementById("b").value;
     let c = +document.getElementById("c").value;
 
-    let res_line = solution_text(a, b, c);
+    let text = solution_text(a, b, c);
 
-    document.getElementById("solution_text").innerHTML = res_line;
+    if (chart_count == 2) {
+        a = +document.getElementById("a2").value;
+        b = +document.getElementById("b2").value;
+        c = +document.getElementById("c2").value;
+
+        text = text + "<hr>" + solution_text(a, b, c);
+    }
+
+    document.getElementById("solution_text").innerHTML = text;
 
 }
 
