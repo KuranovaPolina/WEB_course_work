@@ -5,6 +5,7 @@
             Решение квадратных уравнений
         </title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/main.css" type="text/css">
 
         <!-- MathJax.js -->
@@ -19,8 +20,7 @@
         <script src="../js/main.js"></script>
     </head>
     <body onload="start()">
-
-       <header id = "header"> Сайт-калькулятор по решению квадратных уравнений</header>
+       <header id = "header"><h1>Сайт-калькулятор по решению квадратных уравнений </h1></header>
        <nav id = "nav"> 
             <a href="#parametrs" id = "link1">Параметры уравнения</a>
             <a href="#solution" id = "link2">Текст решения</a>
@@ -32,12 +32,21 @@
                 <div class="roll" id="roll1" onclick="roll('parametrs_form', 'roll1')">-</div> 
                 <div id="parametrs_form_h">Параметры</div>      
                 <div id="parametrs_form">
-                    <div id="formula">
+                    <div id="formula" class="formula">
                         <input type="number" name="a" id="a" placeholder="0" step="0.01" value="0">
                         * x<sup>2</sup> +
                         <input type="number" name="b" id="b" placeholder="0" step="0.01" value="0">
                         * x +
                         <input type="number" name="c" id="c" placeholder="0" step="0.01" value="0">
+                        = 0 
+                    </div>
+                    <div class="add" id="add" onclick="add()">+</div> 
+                    <div id="formula_2" class="formula">
+                        <input type="number" name="a" id="a2" placeholder="0" step="0.01" value="0">
+                        * x<sup>2</sup> +
+                        <input type="number" name="b" id="b2" placeholder="0" step="0.01" value="0">
+                        * x +
+                        <input type="number" name="c" id="c2" placeholder="0" step="0.01" value="0">
                         = 0 
                     </div>
                     <button type="button" name="solve_button" id="solve_button" onclick="solve()">Решить</button>               
@@ -48,19 +57,30 @@
                 <div class="roll" id="roll2" onclick="roll('solution_text', 'roll2')">-</div>
                 <div id="solution_text_h">Решение</div>
                 <div id="solution_text">                
-                    <p id="equation">Решение уравнения <span id="equation_line">0x<sup>2</sup> + 0x + 0 = 0.</span></p> 
-                    <p id="eq_info">a = 0 следовательно уравнение не квадратное, а линейное.</p>
-                    <p id="middle_info">b = 0, оно в знаменателе. На 0 делить нельзя.</p>
-                    <p id="res">с = 0. Уравнение имеет бесконечное количество вещественных корней.</p>
-                                       
+                    .
                 </div>
             </div>
             <div id="graphic">
                 <div class="roll" id="roll3" onclick="roll('chart_div', 'roll3')">-</div>
                 <div id="chart_div_h">График</div>
                 <div id="chart_div"> 
+                    <div id="graphic_settings">
+                        <label for="x_min">x_min =</label>
+                        <input type="number" name="x_min" id="x_min" placeholder="-20" value="-20">
+                        <label for="y_min">y_min =</label>
+                        <input type="number" name="y_min" id="y_min" placeholder="-20" value="-20">
+                        <label for="x_max">x_max =</label>
+                        <input type="number" name="x_max" id="x_max" placeholder="20" value="20">
+                        <label for="y_max">y_max =</label>
+                        <input type="number" name="y_max" id="y_max" placeholder="20" value="20"> <br>
+                        <label for="chart_color">color: </label>
+                        <input type="color" id="chart_color">
+                        <input type="color" id="chart_color_2">
+                    </div>
                     <div><canvas id="chart"></canvas></div> 
-                    <div> <button type="button" name="download_button" id="download_button" onclick="download()">Сохранить</button></div> 
+                    <div id="graphic_button_group">
+                        <button type="button" name="graphic_update" id="graphic_update" onclick="update_gr()">Обновить график</button>
+                        <button type="button" name="download_button" id="download_button" onclick="download()">Сохранить</button></div> 
                 </div>
                   
             </div>
@@ -74,7 +94,7 @@
                     Дискриминат вычисляется по формуле: $$D = b^2 - 4ac.$$ <br>
 
                     Дискриминат может принять 3 вида значений:<br>
-                    \(D > 0\), в таком случае уравнение имеет 2 вещественных корня, вычисляемые по формуле: $${x}_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<br>
+                    \(D > 0\), в таком случае уравнение имеет 2 вещественных корня, вычисляемые по формуле: $${x}_{1,2} = {-b \pm \sqrt{D} \over 2a} = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$<br>
                     \(D = 0\), в таком случае корень 1: $${x} = {-b \over 2a}.$$<br>
                     \(D &lt; 0\), в таком случае вещественных корней у квадратного уравнения нет.<br> <br>
                     
@@ -82,7 +102,8 @@
             </div>
        </main>
        <footer id = "footer">
-        <div>Данный сайт является выполнением курсовой работы по WEB-технологиям...</div>
+        <div>Телефон для связи: +79211234567<br>
+        Почта: mail@mail.ru</div>
         <div id="up"><a href="#header">Наверх</a></div>
         </footer>
     </body>
